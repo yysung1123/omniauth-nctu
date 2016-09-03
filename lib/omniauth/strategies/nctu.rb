@@ -14,9 +14,12 @@ module OmniAuth
         token_url:      "#{OAuthUrl}/o/token/"
       }
 
+      uid do
+        raw_info["username"]
+      end
+
       info do
         {
-          :username => raw_info["username"],
           :d2_email => raw_info["d2_email"]
         }
       end

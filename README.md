@@ -44,7 +44,7 @@ end
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/omniauth-nctu.
+Bug reports and pull requests are welcome on GitHub at https://github.com/deror1869107/omniauth-nctu.
 
 
 ## License

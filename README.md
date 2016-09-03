@@ -18,7 +18,7 @@ Or install it yourself as:
 
     $ gem install omniauth-nctu
 
-Example
+## Example
 
 ```ruby
 require 'sinatra'

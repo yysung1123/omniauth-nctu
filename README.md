@@ -20,7 +20,7 @@ Or install it yourself as:
 
 Example
 
-```
+```ruby
 require 'sinatra'
 require 'omniauth-nctu'
 

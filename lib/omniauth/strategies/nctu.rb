@@ -1,8 +1,9 @@
 require "omniauth-oauth2"
+require "oauth2"
 
 module OmniAuth
   module Strategies
-    class NCTU < OmniAuth::Strategies::OAuth2
+    class Nctu < OmniAuth::Strategies::OAuth2
       OAuthUrl = "https://id.nctu.edu.tw"
 
       option :name, "nctu"
@@ -10,10 +11,8 @@ module OmniAuth
       option :client_options, {
         site:           OAuthUrl,
         authorize_url:  "#{OAuthUrl}/o/authorize/",
-        token_url:      "#{OAuthUrl}/o/token"
+        token_url:      "#{OAuthUrl}/o/token/"
       }
-
-      uid { raw_info["username"] }
 
       info do
         {
@@ -29,8 +28,14 @@ module OmniAuth
       end
 
       def raw_info
-         @raw_info ||= access_token.get("api/profile/").parsed
-       end
+        access_token.options[:mode] = :header
+        @raw_info ||= access_token.get("/api/profile/").parsed
+      end
+
+      def callback_url
+        full_host + script_name + callback_path
+      end
+
     end
   end
 end

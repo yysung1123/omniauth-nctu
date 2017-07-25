@@ -15,5 +15,5 @@ end
 get '/auth/nctu/callback' do
   request.env['omniauth.auth'].to_hash.inspect rescue "No Data"
   puts request.env['omniauth.auth']
-  erb "您好，#{request.env['omniauth.auth'].to_hash["uid"]}。您的D2信箱是#{request.env['omniauth.auth'].to_hash["info"]["d2_email"]}。"
+  erb "您好，#{request.env['omniauth.auth']["uid"]}。您的D2信箱是#{request.env['omniauth.auth']["info"]["email"]}。"
 end

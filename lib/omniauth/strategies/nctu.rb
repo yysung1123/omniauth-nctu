@@ -20,7 +20,9 @@ module OmniAuth
 
       info do
         {
-          :email => raw_info["email"]
+          :email => raw_info["email"],
+          :image => "http://museum.lib.nctu.edu.tw/share/mark.gif",
+          :uid => raw_info["username"],
         }
       end
 

@@ -21,8 +21,8 @@ module OmniAuth
       info do
         {
           :email => raw_info["email"],
-          :image => "http://museum.lib.nctu.edu.tw/share/mark.gif",
-          :uid => raw_info["username"],
+          :name => raw_info["username"],
+          :image => "http://museum.lib.nctu.edu.tw/share/mark.gif"
         }
       end
 
